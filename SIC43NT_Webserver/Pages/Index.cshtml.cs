@@ -12,6 +12,7 @@ namespace SIC43NT_Webserver.Pages
     {
         public string default_key = "N/A";
         public string uid = "N/A";
+        public string custom = "N/A";
 
         public string flagTamperTag = "-";
         public string timeStampTag_uint = "-";
@@ -28,7 +29,7 @@ namespace SIC43NT_Webserver.Pages
         public string flagTamperDecision = "N/A";
         public string rollingCodeDecision = "N/A";
 
-        public void OnGet(string d)
+        public void OnGet(string d, string parn)
         {
             if (d is null)
             {
@@ -47,6 +48,10 @@ namespace SIC43NT_Webserver.Pages
                     rollingCodeServer = KeyStream.stream(default_key, timeStampTag_str, 4);
                     result_agreement_check();
                 }
+            }
+            if (parn is null) {
+            } else {
+                custom = parn;
             }
         }
         private void result_agreement_check()
