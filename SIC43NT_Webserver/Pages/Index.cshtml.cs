@@ -12,7 +12,7 @@ namespace SIC43NT_Webserver.Pages
     {
         public string default_key = "N/A";
         public string uid = "N/A";
-        public string custom = "N/A";
+        public string data = "N/A";
 
         public string flagTamperTag = "-";
         public string timeStampTag_uint = "-";
@@ -29,7 +29,7 @@ namespace SIC43NT_Webserver.Pages
         public string flagTamperDecision = "N/A";
         public string rollingCodeDecision = "N/A";
 
-        public void OnGet(string d, string parn)
+        public void OnGet(string d, string t)
         {
             if (d is null)
             {
@@ -49,9 +49,9 @@ namespace SIC43NT_Webserver.Pages
                     result_agreement_check();
                 }
             }
-            if (parn is null) {
+            if (t is null) {
             } else {
-                custom = parn;
+                data = t;
             }
         }
         private void result_agreement_check()
